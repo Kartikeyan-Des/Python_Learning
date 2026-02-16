@@ -1,11 +1,25 @@
-num1 = int(input("Enter number 1: "))
-num2 = int(input("Enter number 2: "))
+a = int(input("Enter number a: "))
+b = int(input("Enter number b: "))
+choice = input("Enter Operators: ")
 
-def find_max(num1,num2):
-  if num1 > num2:
-    return num1
-  else:
-    return num2
-  
-biggest = find_max(num1,num2)
-print(f"the biggest number is: {biggest}")
+def add(a, b):
+  return a + b
+def sub(a, b):
+  return a - b
+def multiply(a, b):
+  return a * b
+def divide(a, b):
+  if b == 0:
+    return "Error! Cannot divide by zero"
+  return a /b
+
+if choice == '+' or choice.lower() == "add":
+  print(add(a, b))
+elif choice == '-' or choice.lower() == "subtract":
+  print(sub(a, b))
+elif choice == '*' or choice.lower() == "multiply":
+  print(multiply(a, b))
+elif choice == '/' or choice.lower() == "Divide":
+  print(divide(a, b))
+else:
+  print("Unidentified Operator")
