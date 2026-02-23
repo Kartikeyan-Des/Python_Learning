@@ -1,0 +1,1 @@
+input("Enter Palindrom Word: ")
