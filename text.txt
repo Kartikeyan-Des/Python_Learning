@@ -1,0 +1,1 @@
+getting data from the user for file handlingI learn today to understand about file handling and how it is workng and why it is used like kinda things i did learn

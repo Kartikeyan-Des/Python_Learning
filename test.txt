@@ -1,0 +1,2 @@
+I'm learning the file handling
+i learned to use the file handling also the w, r, and a which is Writ, Read and Append
