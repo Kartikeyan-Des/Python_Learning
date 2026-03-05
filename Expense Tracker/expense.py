@@ -1,4 +1,17 @@
-expenses = []
+import json
+
+try:
+    with open("expenses.json", "r") as f:
+        expenses = json.load(f)
+    print("Data loaded Successfully")
+except FileNotFoundError:
+    expenses=[]
+    print("No saved Data, Starting Fresh.")
+
+# with open("expenses.json", "r") as f:
+#     expenses = json.load(f)
+
+# expenses = []
 
 while True:
     print("\n--- Expense Tracker ---")
@@ -44,7 +57,10 @@ while True:
             print(f"No Expense Foud for {categor} Filter ")
 
     elif choice == "4":
-        print("Comeback Later, Now Goodbye")
+
+        with open("expenses.json", "w") as f:
+            json.dump(expenses,f,indent=4)
+        print("Progress Saved, Now Goodbye")
         break
     else:
         print("Invalid choice, Try again")

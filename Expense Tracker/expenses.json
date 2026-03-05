@@ -1,0 +1,37 @@
+[
+    {
+        "Item": "Carrot",
+        "Price": 40,
+        "Category": "vegetables"
+    },
+    {
+        "Item": "mango",
+        "Price": 30,
+        "Category": "fruits"
+    },
+    {
+        "Item": "coke",
+        "Price": 34,
+        "Category": "caffeine drink"
+    },
+    {
+        "Item": "monster energy",
+        "Price": 80,
+        "Category": "caffeine drink"
+    },
+    {
+        "Item": "cauliflower",
+        "Price": 40,
+        "Category": "vegetables"
+    },
+    {
+        "Item": "bun",
+        "Price": 30,
+        "Category": "bakery"
+    },
+    {
+        "Item": "cakes",
+        "Price": 30,
+        "Category": "bakery"
+    }
+]
