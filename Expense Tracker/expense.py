@@ -1,5 +1,26 @@
 import json
 
+def add(expense_list):
+        item = input("Enter the product name: ")
+        try:
+            price = int(input("enter the cost of the product: "))
+            category = input("Enter the Category of the Product: ").lower() 
+            expense_list.append({"Item":item, "Price":price, "Category":category})
+            print("Expense added Successfully!!")
+        except ValueError:
+                print("Error: Price must be Number")
+
+def view(expense_list):
+    print("\n--- Your Spending ---")
+    Total = 0
+    for e in expense_list:
+            print(f"{e['Item']}: {e['Price']} : {e['Category']}")
+            Total += e['Price']
+    print(f"--- Total Spending: ₹{Total}---")
+
+
+
+
 try:
     with open("expenses.json", "r") as f:
         expenses = json.load(f)
@@ -23,21 +44,24 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        item = input("Enter the product name: ")
-        price = int(input("enter the cost of the product: "))
-        category = input("Enter the Category of the Product: ").lower()
+        add(expenses)
+        # item = input("Enter the product name: ")
+        # price = int(input("enter the cost of the product: "))
+        # category = input("Enter the Category of the Product: ").lower()
 
-        entry = {"Item":item, "Price": price, "Category": category}
-        expenses.append(entry)
-        print("Added")
+        # entry = {"Item":item, "Price": price, "Category": category}
+        # expenses.append(entry)
+        # print("Added")
+
     elif choice == "2":
-        print("\n--- Your Spending ---")
+         view(expenses)
+        # print("\n--- Your Spending ---")
 
-        Total = 0
-        for e in expenses:
-            print(f"{e['Item']}: {e['Price']} : {e['Category']}")
-            Total += e['Price']
-        print(f"--- Total Spending: ₹{Total}---")
+        # Total = 0
+        # for e in expenses:
+        #     print(f"{e['Item']}: {e['Price']} : {e['Category']}")
+        #     Total += e['Price']
+        # print(f"--- Total Spending: ₹{Total}---")
 
     elif choice == "3":
         print("\n--- Filter  ---")
