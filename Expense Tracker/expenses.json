@@ -33,5 +33,10 @@
         "Item": "cakes",
         "Price": 30,
         "Category": "bakery"
+    },
+    {
+        "Item": "Doughnut",
+        "Price": 50,
+        "Category": "cakes"
     }
 ]
