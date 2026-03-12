@@ -29,8 +29,29 @@ def view_student(conn):
     print("\n-- Student List --")
     for row in rows:
         print(f" ID:{row[0]}, Name:{row[1]}, Grade:{row[2]}")
-    
+
+def update_student(conn, ID, Name, Grade):
+    update = input("which Student you want to update: ")
+
 db_connection = init_db()
-add_student(db_connection)
-view_student(db_connection)
-db_connection.close()   
+
+while True:
+    print("\n --Student Mangement System-- ")
+    print("1. Add Students")
+    print("2. View Students")
+    print("3. Exit ")
+
+    choice = input("Enter your Choice: ")
+
+    if choice == "1":
+        add_student(db_connection)
+    elif choice == "2":
+        view_student(db_connection)
+    elif choice == "3":
+        db_connection.close() 
+        break 
+    else:
+        print("Invalid Choice, Try Again...")
+
+
+  
