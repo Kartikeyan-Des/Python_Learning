@@ -30,8 +30,24 @@ def view_student(conn):
     for row in rows:
         print(f" ID:{row[0]}, Name:{row[1]}, Grade:{row[2]}")
 
-def update_student(conn, ID, Name, Grade):
-    update = input("which Student you want to update: ")
+def update_student(conn):
+    student_id = input("Enter the student ID: ")
+
+    new_name = input("Enter new Name: ")
+    new_grade = input("Enter new Grade: ")
+
+    cursor= conn.cursor()
+    cursor.execute('''
+        UPDATE tblStudent 
+        SET Name = ?, Grade = ? 
+        WHERE ID = ?
+    ''', (new_name, new_grade, student_id))
+    conn.commit()
+
+    if cursor.rowcount > 0:
+        print(f"Student ID {student_id} Updated Successfully!.... ")
+    else:
+        print(f"No Student Found for Student ID: {student_id}")
 
 db_connection = init_db()
 
@@ -39,7 +55,8 @@ while True:
     print("\n --Student Mangement System-- ")
     print("1. Add Students")
     print("2. View Students")
-    print("3. Exit ")
+    print("3. Update Students")
+    print("4. Exit ")
 
     choice = input("Enter your Choice: ")
 
@@ -48,6 +65,8 @@ while True:
     elif choice == "2":
         view_student(db_connection)
     elif choice == "3":
+        update_student(db_connection)
+    elif choice == "4":
         db_connection.close() 
         break 
     else:
