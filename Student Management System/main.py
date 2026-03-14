@@ -49,6 +49,28 @@ def update_student(conn):
     else:
         print(f"No Student Found for Student ID: {student_id}")
 
+
+def search_students(conn):
+    Name = input("Enter the Student Name: ")
+
+    cursor = conn.cursor()
+    cursor.execute('''
+    SELECT * from tblStudent WHERE Name = ?
+
+''',(Name))
+    
+    rows = cursor.fetchall()
+
+    if rows:
+        print("\n-- Search Results --")
+        for row in rows:
+            print(f"ID:{row[0]}, Name:{row[1]}, Grade:{row[2]}")
+    else:
+        print(f"No student found with name '{Name}'")
+
+    
+    conn.commit()
+
 db_connection = init_db()
 
 while True:
@@ -56,7 +78,8 @@ while True:
     print("1. Add Students")
     print("2. View Students")
     print("3. Update Students")
-    print("4. Exit ")
+    print("4. Search Student Lists")
+    print("5. Exit ")
 
     choice = input("Enter your Choice: ")
 
@@ -67,6 +90,8 @@ while True:
     elif choice == "3":
         update_student(db_connection)
     elif choice == "4":
+        search_students(db_connection)
+    elif choice == "5":
         db_connection.close() 
         break 
     else:
