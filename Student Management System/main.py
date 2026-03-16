@@ -55,9 +55,9 @@ def search_students(conn):
 
     cursor = conn.cursor()
     cursor.execute('''
-    SELECT * from tblStudent WHERE Name = ?
+    SELECT * from tblStudent WHERE Name LIKE ?
 
-''',(Name))
+''',(Name + '%',))
     
     rows = cursor.fetchall()
 
@@ -71,6 +71,17 @@ def search_students(conn):
     
     conn.commit()
 
+def delete_students(conn):
+    student_id = input("Enter ID to delete: ")
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM tblStudent WHERE ID = ?', (student_id,))
+    conn.commit()
+    if cursor.rowcount > 0:
+        print(f"Student ID {student_id} Deleted Successfully!.... ")
+    else:
+        print(f"No Student Found for Student ID: {student_id}")
+
+
 db_connection = init_db()
 
 while True:
@@ -79,7 +90,8 @@ while True:
     print("2. View Students")
     print("3. Update Students")
     print("4. Search Student Lists")
-    print("5. Exit ")
+    print("5. Delete Student")
+    print("6. Exit ")
 
     choice = input("Enter your Choice: ")
 
@@ -92,6 +104,8 @@ while True:
     elif choice == "4":
         search_students(db_connection)
     elif choice == "5":
+        delete_students(db_connection)
+    elif choice == "6":
         db_connection.close() 
         break 
     else:
