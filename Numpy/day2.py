@@ -13,16 +13,29 @@ import numpy as np
 # print(max)
 # print(min)
 
-data = np.array([10, 20, 30, 40, 50])
+# data = np.array([10, 20, 30, 40, 50])
 
-mu = np.mean(data)
+# mu = np.mean(data)
 
-print(mu)
+# print(mu)
 
-sub = (data - mu)
+# sub = (data - mu)
 
-print(sub)
+# print(sub)
 
-sqrt = sub**2
+# sqrt = sub**2
 
-print(sqrt)
+# print(sqrt)
+
+
+hours = np.array([
+    [8, 8, 8], # Day 1
+    [7, 9, 6]  # Day 2
+])
+
+column_sums = np.sum(hours, axis=0)
+
+row_sums = np.sum(hours, axis=1)
+
+print(column_sums)
+print(row_sums)
