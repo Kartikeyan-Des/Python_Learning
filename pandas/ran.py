@@ -9,8 +9,10 @@ data = {
 
 df =pd.DataFrame(data)
 
+
+
+df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
+df["Age"] = df["Age"].fillna(df["Age"].mean())
 print(df)
-print("=========")
-print(df.info())
-print("=========")
-print(df.describe())
+
+print(df.groupby("City")["Salary"].agg(["mean","max","count"]))

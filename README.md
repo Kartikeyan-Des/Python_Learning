@@ -48,3 +48,16 @@ Built a complete Student Management System using SQLite, moving from in-memory d
 
 ### 📂 Featured Project:
 - **[Student Management System](./Student Management System/main.py):** A CLI app to manage student records with full CRUD operations backed by a SQLite database.
+
+## Completed: Week 4 — NumPy & Pandas + Live API Pipeline (Apr 8 - Apr 15 (2026))
+Built a real-time weather data pipeline pulling live data from OpenWeather API.
+
+### Key Skills Mastered:
+- **NumPy Vectorization:** Rewrote loop-based salary calculator using NumPy — achieved 40x speed improvement
+- **Pandas:** DataFrame creation, filtering, sorting, groupby, handling missing values
+- **Live API Integration:** Pulled real-time JSON data from OpenWeather API using requests
+- **JSON Parsing:** Manually extracted nested JSON fields into clean DataFrame structure
+- **Environment Variables:** Used dotenv to securely handle API keys
+
+### 📂 Featured Project:
+- **[Live Weather Pipeline](./pandas/liveapi.py):** Pulls real-time weather data for Indian cities — temperature, humidity, feels like, weather condition. Analyzes which city feels hottest and filters by humidity threshold.
