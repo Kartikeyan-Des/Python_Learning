@@ -30,7 +30,7 @@ for city in cities:
     })
 
 df = pd.DataFrame(weather_data)
-
+print(data)
 print(df)
 print("=========")
 print(df.sort_values("Temperature", ascending=False))
