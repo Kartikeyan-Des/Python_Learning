@@ -18,11 +18,18 @@ df1 = pd.DataFrame(employees)
 df2 = pd.DataFrame(departments)
 
 
+
+
 # pivot = df1.pivot_table(values='Salary', index='DeptID', aggfunc='mean')
 # print(pivot)
 
 
 merged = pd.merge(df1, df2, on="DeptID", how="left")
+print(merged)
+# print(merged["Name"].str.lower())
+# print(merged["Name"].str.replace('a', '@'))
+# print(merged["Name"].str.len())
+print(merged["Location"].str.startswith("C"))
 
-pivot2 = merged.pivot_table(values='EmpID', index='Location',  aggfunc= 'count' )
-print(pivot2)
+# pivot2 = merged.pivot_table(values='EmpID', index='Location',  aggfunc= 'count' )
+# print(pivot2)
