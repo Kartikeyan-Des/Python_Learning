@@ -21,9 +21,6 @@ for headline in headlines:
 df = pd.DataFrame(headline_list)
 df["Headline_length"] = df['Headline'].str.len()
 print(df.sort_values("Headline_length", ascending=False))
-
-
-
 print(f"\nTotal headlines scraped: {len(df)}")
 
 
@@ -31,5 +28,13 @@ plt.plot(df.index, df["Headline_length"])
 plt.xlabel("Headline Index")
 plt.ylabel("Character Count")  
 plt.title("Hindu Headlines Length")
+plt.show()
+
+plt.bar(df.index, df["Headline_length"])
+plt.title("Bar Chart")
+plt.show()
+
+plt.hist(df["Headline_length"], bins=10)
+plt.title("Histogram")
 plt.show()
 
