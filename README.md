@@ -61,3 +61,26 @@ Built a real-time weather data pipeline pulling live data from OpenWeather API.
 
 ### 📂 Featured Project:
 - **[Live Weather Pipeline](./pandas/liveapi.py):** Pulls real-time weather data for Indian cities — temperature, humidity, feels like, weather condition. Analyzes which city feels hottest and filters by humidity threshold.
+
+
+## Completed: Phase 1 Final — Chennai Real-Time Data Pipeline (Apr 15 - May 8 (2026))
+Built a complete data engineering pipeline pulling live Chennai weather and gold prices, storing in SQLite, and analyzing trends over time.
+
+### Key Skills Mastered:
+- **Web Scraping:** Scraped live headlines from The Hindu using BeautifulSoup
+- **Merging DataFrames:** Combined multiple datasets using inner, left, right, outer joins — same as SQL
+- **Pivot Tables:** Multi-dimensional aggregations across departments and categories
+- **Datetime Handling:** Converted Unix timestamps and string dates to proper datetime objects
+- **Matplotlib:** Line, bar, and histogram charts on real scraped data
+- **Seaborn:** Heatmaps and pairplots showing correlations between weather variables
+- **SQLite Pipeline:** Two-table database storing weather and gold price data across multiple runs
+- **Data Analysis:** Answered 10 real questions from live data with code
+
+### Key Findings:
+- Chennai Temperature vs Humidity correlation: **-0.81** — strong negative. Hotter days are drier.
+- Gold price increased **₹4,040** between May 6 and May 8 2026
+- Chennai weather is **mist 89% of the time** based on recorded data
+- Average Chennai temperature: **31.26°C**
+
+### 📂 Featured Project:
+- **[Chennai Data Pipeline](./Chennai_Pipeline/pipeline.py):** Pulls live weather and gold prices, stores in SQLite. Run `pipeline.py` to fetch fresh data, then `analyze.py` to answer 10 analytical questions with visualizations.
