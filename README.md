@@ -84,3 +84,28 @@ Built a complete data engineering pipeline pulling live Chennai weather and gold
 
 ### 📂 Featured Project:
 - **[Chennai Data Pipeline](./Chennai_Pipeline/pipeline.py):** Pulls live weather and gold prices, stores in SQLite. Run `pipeline.py` to fetch fresh data, then `analyze.py` to answer 10 analytical questions with visualizations.
+
+
+## Completed: Phase 2 — ML Week 1 & 2 — Machine Learning From the Inside Out (May 8 - May 17 (2026))
+Built core ML algorithms from scratch using only NumPy — no Scikit-learn.
+
+### Key Skills Mastered:
+- **Linear Regression from Scratch:** Implemented predict, cost function, and gradient descent manually using only NumPy
+- **Train/Test Split:** Understood overfitting by evaluating on unseen data
+- **Evaluation Metrics:** Calculated MAE, RMSE, R² manually — not just using libraries
+- **Logistic Regression from Scratch:** Implemented sigmoid, predict, and gradient descent for classification
+- **Confusion Matrix:** Calculated TP, TN, FP, FN manually from predictions
+- **Classification Metrics:** Accuracy, Precision, Recall, F1 Score — calculated manually AND in code
+- **Entropy from Scratch:** Implemented entropy formula using NumPy — foundation of Decision Trees
+- **Information Gain:** Built weighted average entropy and information gain functions from scratch
+- **Overfitting vs Underfitting:** Understood Bias vs Variance trade-off with real examples
+
+### Key Insights:
+- Gold price model R² = **-1650** — proved that 6 data points is not enough for reliable prediction
+- Logistic Regression achieved **80% accuracy** on student pass/fail prediction
+- Perfect split at hours > 4 gave **Information Gain = 0.97** — maximum possible
+
+### 📂 Featured Projects:
+- **[Linear Regression](./ML/Linear_regression.py):** Predict, cost function, gradient descent — NumPy only. Trained on real gold price data.
+- **[Logistic Regression](./ML/Logistic_regression.py):** Sigmoid, classification, confusion matrix, precision, recall, F1 — all from scratch.
+- **[Decision Tree Math](./ML/Entropy.py):** Entropy and Information Gain implemented manually — the math behind Decision Trees.
