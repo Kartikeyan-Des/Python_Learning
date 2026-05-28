@@ -7,6 +7,13 @@ df = pd.read_csv("https://raw.githubusercontent.com/IBM/telco-customer-churn-on-
 # print(df.head())
 # print(df.columns.tolist())
 
-print(df.info())
-print(df['Churn'].value_counts())
-print(df.describe())
+# print(df.info())
+# print(df['Churn'].value_counts())
+# print(df.describe())
+
+
+
+df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
+print(df['TotalCharges'].isnull().sum())
+df = df.dropna(subset=['TotalCharges'])
+print(df.shape)
