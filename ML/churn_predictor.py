@@ -15,5 +15,9 @@ df = pd.read_csv("https://raw.githubusercontent.com/IBM/telco-customer-churn-on-
 
 df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
 print(df['TotalCharges'].isnull().sum())
+
 df = df.dropna(subset=['TotalCharges'])
-print(df.shape)
+df = df.drop('customerID', axis=1)
+df['churn'] = df['churn'].map({'Yes':1, 'No':0 })
+
+print(df)
