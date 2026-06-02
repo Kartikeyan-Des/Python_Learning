@@ -86,7 +86,7 @@ Built a complete data engineering pipeline pulling live Chennai weather and gold
 - **[Chennai Data Pipeline](./Chennai_Pipeline/pipeline.py):** Pulls live weather and gold prices, stores in SQLite. Run `pipeline.py` to fetch fresh data, then `analyze.py` to answer 10 analytical questions with visualizations.
 
 
-## Completed: Phase 2 — ML Week 1 & 2 — Machine Learning From the Inside Out (May 8 - May 17 (2026))
+## Completed: Phase 2 — ML Week 1 & 2 — Machine Learning From the Inside Out (May 8 - june 2 (2026))
 Built core ML algorithms from scratch using only NumPy — no Scikit-learn.
 
 ### Key Skills Mastered:
@@ -109,3 +109,26 @@ Built core ML algorithms from scratch using only NumPy — no Scikit-learn.
 - **[Linear Regression](./ML/Linear_regression.py):** Predict, cost function, gradient descent — NumPy only. Trained on real gold price data.
 - **[Logistic Regression](./ML/Logistic_regression.py):** Sigmoid, classification, confusion matrix, precision, recall, F1 — all from scratch.
 - **[Decision Tree Math](./ML/Entropy.py):** Entropy and Information Gain implemented manually — the math behind Decision Trees.
+
+## Completed: Phase 2 — ML Week 3 & 4 — Scikit-learn & Real Business ML (May 17 - Jun 2 (2026))
+Built production-ready ML pipelines using Scikit-learn and solved a real business problem.
+
+### Key Skills Mastered:
+- **Random Forests:** Understood why ensemble learning beats single Decision Trees
+- **Cross Validation:** Honest model evaluation across 5 folds — not just one lucky test split
+- **Feature Engineering:** Created new features from existing data to improve model inputs
+- **Scikit-learn Pipelines:** Chained preprocessing and model into one clean production object
+- **Data Cleaning:** Handled real messy data — type conversion, null values, string encoding
+- **get_dummies Encoding:** Converted categorical string columns to numeric for ML
+- **Class Imbalance:** Understood why imbalanced datasets hurt minority class recall
+- **Model Saving:** Serialized trained model using joblib for reuse without retraining
+
+### Key Insights:
+- Customer churn model achieved **79% cross-validated accuracy** on 7,032 real IBM telecom customers
+- Class imbalance (73% stayed vs 27% churned) caused model to miss 52% of actual churners
+- Trying `class_weight='balanced'` did not improve results — learned that not every fix works
+- Cross val average 79% ≈ test accuracy 78.5% — balanced model, low variance
+
+### 📂 Featured Projects:
+- **[Scikit-learn Pipeline](./ML/pipeline_model.py):** StandardScaler + RandomForest in one Pipeline object. 96.6% cross-validated accuracy on Iris dataset.
+- **[Customer Churn Predictor](./ML/churn_predictor.py):** Real IBM telecom dataset. Full pipeline — data cleaning, encoding, Random Forest, evaluation metrics, model saved with joblib. 79% accuracy predicting customer churn.
