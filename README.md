@@ -1,3 +1,9 @@
+> **⏸️ STATUS: HIATUS — Paused June 15, 2026**
+> 
+> 10 weeks of solid ML progress preserved here.
+> Pivoting to .NET Core mastery roadmap until December 2026.
+> AI roadmap resumes January 2027.
+
 # Python_Learning
 Python-Learning
 
